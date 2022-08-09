@@ -1,0 +1,25 @@
+添加和取消代码注释【Ctrl+Shift+C】
+添加管道符号【Ctrl+Shift+M】
+插入赋值符号【Alt+-】
+ctrl+alt+上下箭头，复制行或区块
+ctrl+上下箭头，移动单行（或标记区块）
+ctrl+d 删除行或区块
+选中需要修改的变量，然后在菜单栏中依次点击Code -> Rename in Scope(默认快捷键是Ctrl+Alt+Shift+M)，就可以批量地进行重命名了
+新建脚本"Shift"+"Ctrl"+"N
+快速复制某行代码
+ctrl + shift + d
+Ctrl+Shift+N 快速新建脚本
+查看函数细节：将光标放到函数中间，然后按F1键
+搜索历史记录：Ctr + ↑
+创建可折叠注释：Ctrl + Shift + R是在代码中
+Esc强制结束
+
+windows快捷键：
+	Alt+↑：返回上级目录
+	右键+S：返回桌面（右键点击任务栏）
+	F2：重命名
+	Ctrl+Z：撤回
+	Ctrl+X：剪切
+	windows图标+D：返回桌面
+windows更改默认文件打开方式：设置—应用—默认应用—按文件类型打开
+更改外观：Tools——Gobal Options——Appearance	
