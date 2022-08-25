@@ -8,3 +8,4 @@ There are `bash shell` records,which includes basic command of `bash shell`, bas
 
 # 2. visualization of data
 ## [2.1 ggplot2 introduction](https://github.com/CocoCanstant/Learning/wiki/2.1-ggplot2-introduction)
+## [2.2 绘制简单条形图](https://github.com/CocoCanstant/Learning/wiki/2.2-geom_bar())
