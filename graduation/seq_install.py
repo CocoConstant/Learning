@@ -2,6 +2,7 @@
 
 import pandas as pd
 from bs4 import BeautifulSoup
+import requests
 
 data = pd.read_table('taxid10239.nbr', comment='#', header=None, names=["Representative","Neighbor","Host","Selected lineage","Taxonomy name","Segment name"]) # get information
 accession = list(data['Neighbor']) # extract 'Neighbor' information
