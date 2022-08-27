@@ -1,8 +1,10 @@
 #!/usr/bin/bash
 
-for fasta_file in $( ls /home/bio_kang/data/virus_data/*.fasta )
+location=$1
+
+for fasta_file in $( ls $1/*.fasta )
 do
-	if [ $( grep -oP '^(>)[A-Z]{1,2}\d{5,6}' | wc -l ) -eq 20 ]
+	if [ $( grep -oP '^(>)[A-Z]{1,2}\d{5,6}' $fasta_file | wc -l ) -eq 20 ]
 	then
 		continue
 	else
