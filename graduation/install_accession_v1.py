@@ -1,0 +1,47 @@
+#!/home/bio_kang/software/anaconda3/bin/python
+
+# import essential library
+import re
+import requests
+import sys
+
+# open file and get data
+with open('/home/bio_kang/Learning/bioinformatics/virion_coronaviridae_accession.csv', 'r') as f:
+    lines = f.readlines()
+    f.close()
+
+accession = []
+
+pattern_acce = re.compile(r'[A-Z]{1,2}\d+')
+for line in lines:
+    accession += re.findall(pattern_acce, line)
+
+# remove duplication accession
+accession = list(set(accession))
+
+# get id information and fasta imformation and write info to file
+def get_url_info_id(segment,num):
+
+    # Using requests function get the id from term
+    term_url = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nucleotide&api_key=6e2f58038b074d964bb8b87f43623af7b508&term=' + ",".join(segment)
+    term_info = requests.get(term_url).text
+ 
+    id_pattern = re.compile(r'<Id>(\d+)</Id>')
+    accession_id = re.findall(id_pattern, term_info)
+
+    # get sequencing information from id
+    fasta_url = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&rettype=fasta&id={}&api_key=6e2f58038b074d964bb8b87f43623af7b508'.format(','.join(accession_id))
+    fasta_info = requests.get(fasta_url).text
+    with open('/home/bio_kang/Learning/bioinformatics/sequence_{}.fasta'.format(num),'wb') as f, requests.get(fasta_url,stream=True) as info:
+        for chunk in info.iter_content(chunk_size=256*1024):
+            if not chunk:
+                break
+            f.write(chunk)
+
+start = int(sys.argv[1])
+end = int(sys.argv[2])
+
+for i in range(start,end):
+    id_list = accession[i*20:(i+1)*20]
+    fasta_info = get_url_info_id(id_list)
+    write_file(fasta_info,i)
