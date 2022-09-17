@@ -44,4 +44,3 @@ end = int(sys.argv[2])
 for i in range(start,end):
     id_list = accession[i*20:(i+1)*20]
     fasta_info = get_url_info_id(id_list)
-    write_file(fasta_info,i)
