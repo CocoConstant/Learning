@@ -10,6 +10,7 @@ with open('/home/bio_kang/Learning/bioinformatics/virion_coronaviridae_accession
     lines = f.readlines()
     f.close()
 
+# this is a empty list to collect accession number
 accession = []
 
 pattern_acce = re.compile(r'[A-Z]{1,2}\d+')
@@ -31,16 +32,17 @@ def get_url_info_id(segment,num):
 
     # get sequencing information from id
     fasta_url = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&rettype=fasta&id={}&api_key=6e2f58038b074d964bb8b87f43623af7b508'.format(','.join(accession_id))
-    fasta_info = requests.get(fasta_url).text
     with open('/home/bio_kang/Learning/bioinformatics/sequence_{}.fasta'.format(num),'wb') as f, requests.get(fasta_url,stream=True) as info:
         for chunk in info.iter_content(chunk_size=256*1024):
             if not chunk:
                 break
             f.write(chunk)
 
+# set the section
 start = int(sys.argv[1])
 end = int(sys.argv[2])
 
+# download data
 for i in range(start,end):
     id_list = accession[i*20:(i+1)*20]
     fasta_info = get_url_info_id(id_list)
