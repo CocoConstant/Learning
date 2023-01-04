@@ -30,8 +30,7 @@ def get_url_info_id(segment,num):
     accession_id = re.findall(id_pattern, term_info)
 
     # get sequencing information from id
-    fasta_url = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&rettype=fasta&id={}&api_key=6e2f58038b074d964bb8b87f43623af7b508'.format(','.join(accession_id))
-    fasta_info = requests.get(fasta_url,timeout=(5,5).text
+    fasta_url = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&rettype=fasta&id={}&api_key=59cbd6ff6b3ce5d506f0eeb69e4e09362409 '.format(','.join(accession_id))
     with open('/home/bio_kang/Learning/bioinformatics/sequence_{}.fasta'.format(num),'wb') as f, requests.get(fasta_url,stream=True) as info:
         for chunk in info.iter_content(chunk_size=256*1024):
             if not chunk:
