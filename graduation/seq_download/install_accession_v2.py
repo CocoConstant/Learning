@@ -10,6 +10,7 @@ with open('/home/bio_kang/Learning/bioinformatics/virion_coronaviridae_accession
     lines = f.readlines()
     f.close()
 
+# this is a empty list to collect accession number
 accession = []
 
 pattern_acce = re.compile(r'[A-Z]{1,2}\d+')
