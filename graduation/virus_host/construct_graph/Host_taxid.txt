@@ -1685,7 +1685,7 @@
 30627	Chordata;Mammalia;Rodentia;Echimyidae;Mesomys;Mesomys hispidus	7711;40674;9989;10161;30626;30627
 30635	Chordata;Mammalia;Rodentia;Cricetidae;Necromys;Necromys lasiurus	7711;40674;9989;337677;399316;30635
 30639	Chordata;Mammalia;Rodentia;Muridae;Mastomys;unclassified Mastomys species	7711;40674;9989;10066;30639;
-30640	Chordata;Mammalia;Rodentia;Sciuridae;Neosciurus;Neosciurus carolinensis	7711;40674;9989;55153;2895726;30640
+30640	Chordata;Mammalia;Rodentia;Sciuridae;Sciurus;Sciurus carolinensis	7711;40674;9989;55153;10001;30640
 30650	Chordata;Mammalia;Rodentia;Gliridae;unclassified Gliridae genus;unclassified Gliridae species	7711;40674;9989;30650;;
 306559	Chordata;Actinopteri;Cichliformes;Cichlidae;Symphysodon;Symphysodon discus	7711;186623;1489911;8113;74132;306559
 306578	Chordata;Actinopteri;Perciformes;Serranidae;Epinephelus;Epinephelus chlorostigma	7711;186623;8111;30871;94231;306578
