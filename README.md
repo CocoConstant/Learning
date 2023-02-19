@@ -13,5 +13,8 @@ There are `bash shell` records,which includes basic command of `bash shell`, bas
 ## [2.2 绘制简单条形图](https://github.com/CocoCanstant/Learning/wiki/2.2-geom_bar())
 
 
-# 3.Graduation Program
+# 3. Graduation Program
 ## [3.1 Getting information top 250 films from douban](https://github.com/CocoCanstant/Learning/wiki/Getting-information-top-250-films-from-douban)
+
+# 4. Deep Learning
+## [4.1 The "Hello World" Of Deep Learning](https://github.com/CocoCanstant/Learning/wiki/1.1-The-%22Hello-World%22-Of-Deep-Learning)
