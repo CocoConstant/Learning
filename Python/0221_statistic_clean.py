@@ -19,19 +19,27 @@ with open(raw_file_name, 'r') as rf:
 def find_total(file):
     with open(file, 'r') as f:
         _data = f.readlines()
-    return int(_data[3].split('      ')[1].strip('\n'))
+    return int(_data[3].split('\t')[1].strip('\n'))
 
 # get information
 df_1 = pd.DataFrame(columns=['Sample', 'Path', 'Raw_Size(GB)'])
 n = 0
 for row in raw_data:
-    sample_name = row.split('       ')[0] # sample name
-    dir_path = '/' + '/'.join(row.split('  ')[-1].split('/')[1:-1]) # path
-    
-    pattern = re.compile(r".*report$")
-    file = (re.match(pattern, i).group() for i in os.listdir(dir_path) if re.match(pattern, i) != None)
+    sample_name = row.split('\t')[0] # sample name
+    # print(sample_name)
 
-    total_num = round(find_total(file)/1000000000, 2) # raw_data size (GB)
+    dir_path = '/'.join(row.split('\t')[-1].split('/')[0:-1]) # path
+    # print(dir_path)
+
+    files = os.listdir(dir_path)
+    # print(files)
+    pattern = re.compile(r".*report$")
+
+    for i in files:
+        if re.match(pattern, i) != None:
+            file = re.match(pattern, i).group()
+
+    total_num = round(find_total(dir_path + '/' + file)/1000000000, 2) # raw_data size (GB)
     df_1.loc[n] = [sample_name, dir_path, total_num]
     n += 1
 
@@ -44,14 +52,18 @@ with open(clean_file_name, 'r') as f:
     for line in clean_data:
         if 'cleanreads_r1' in line:
             sample = line.split('\t')[0].split('/')[-2]
-            r1_size = line.split('\t')[4]
-            r1_avg = line.split('\t')[-2]
+            # print(sample)
+            # print(line.split('  '))
+            r1_size = round(int(''.join(line.split('  ')[4].split(',')))/1000000000, 2)
+            # print(r1_size)
+            r1_avg = str(line.split('  ')[-4])
+            # print(r1_avg)
             df_2.loc[m] = [sample, r1_size, r1_avg]
             m += 1
         else:
             sample = line.split('\t')[0].split('/')[-2]
-            r2_size = line.split('\t')[4]
-            r2_avg = line.split('\t')[-2]
+            r2_size = round(int(''.join(line.split('  ')[4].split(',')))/1000000000, 2)
+            r2_avg = str(line.split('  ')[-4])
             df_3.loc[k] = [sample, r2_size, r2_avg]
             k += 1
 
