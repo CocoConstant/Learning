@@ -6,8 +6,8 @@ image_path = sys.argv[1]
 image_list = os.listdir(image_path)
 
 segment = 2 # how many pieces of photo
-x = 8
-y = 12
+x = int(sys.argv[2]) # please input the x axis nums
+y = int(sys.argv[3]) # please input the y axis nums
 initial_number = 1
 
 for _ in range(segment):
