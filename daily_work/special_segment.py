@@ -1,3 +1,10 @@
+'''
+This python script is designed to rename the image and assign the image to diractory
+example: "python rename_Image.py diractory_path 5 10"
+The 5 means breakpoint and 10 means the end of one row
+author: ouyangkang
+'''
+
 import os
 import sys
 import shutil

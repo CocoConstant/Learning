@@ -1,3 +1,9 @@
+'''
+This python script is designed to rename the image
+example: "python rename_Image.py diractory_path"
+author: ouyangkang
+'''
+
 import os
 import sys
 import shutil
