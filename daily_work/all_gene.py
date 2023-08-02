@@ -13,6 +13,7 @@ image_save_path = sys.argv[2]
 sc_data = sc.read_h5ad(data_pathway)
 sc.pp.neighbors(sc_data, n_neighbors=10)
 sc.tl.rank_genes_groups(sc_data, 'celltype', method='t-test')
+sc.pl.rank_genes_groups(sc_data, n_genes=25, sharey=False)
 
 
 # defining a function to construct dataframe
