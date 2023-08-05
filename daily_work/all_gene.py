@@ -3,7 +3,18 @@ import scanpy as sc
 import pandas as pd
 import dynamo as dyn
 import sys
+from pygam import LinearGAM, s
+import numpy as np
+import matplotlib.cm as cm
+import matplotlib as mp
+from sklearn import preprocessing
+import seaborn as sns
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.cluster import hierarchy
+import matplotlib as mpl
 
+print('import package no problem')
 
 #################### 1. data pre-processing ####################
 data_pathway = sys.argv[1]
@@ -15,6 +26,7 @@ sc.pp.neighbors(sc_data, n_neighbors=10)
 sc.tl.rank_genes_groups(sc_data, 'celltype', method='t-test')
 sc.pl.rank_genes_groups(sc_data, n_genes=25, sharey=False)
 
+print('read data no problem')
 
 # defining a function to construct dataframe
 def rank_genes_groups_df(adata, key='rank_genes_groups',subgroup = None):
@@ -58,6 +70,7 @@ dyn.pl.kinetic_heatmap(
     #enforce =True
 )
 
+print('dynamo no problem')
 
 # get dynamo psedotime data and resover
 cluster_data = sc_data.uns['kinetics_heatmap']
@@ -71,8 +84,7 @@ cluster_data.dropna(axis=0, inplace=True)
 try_gam = list(range(100))
 gene_num = cluster_data.shape[0]
 
-from pygam import LinearGAM, s
-import numpy as np
+print('starting fit')
 
 gam_fit_df = pd.DataFrame(np.zeros((gene_num, 100), dtype=float), index=cluster_data.index)
 for gene_name in cluster_data.index:
@@ -84,12 +96,11 @@ for gene_name in cluster_data.index:
 
 gam_fit_df.to_csv(image_save_path + '/' + 'fit_df.csv')
 
+print('fit over')
 
 #################### 3. data visualization ####################
 
-import seaborn as sns
-import numpy as np
-import matplotlib.pyplot as plt
+
 
 cmap = sns.color_palette( "ch:start=.2,rot=-.3", n_colors=1_000)
 sns.set_context( context='paper')
@@ -102,7 +113,7 @@ ax = sns.clustermap( gam_fit_df, metric='euclidean', method='ward', col_cluster=
 ax.cax.set_visible(False)
 num_stages = 6
 ticks = np.linspace(0, gam_fit_df.shape[1], num_stages)
-ax.ax_heatmap.set_xticks( ticks);
+ax.ax_heatmap.set_xticks( ticks)
 # ax.ax_heatmap.set_xticklabels( adata.uns['stage_order'], rotation=90);
 ax.ax_row_dendrogram.set_visible(True)
 plt.setp( ax.ax_heatmap.yaxis.get_majorticklabels(), rotation=0)
@@ -110,8 +121,7 @@ ax.ax_heatmap.set_title( "Trend Fit Clustering")
 plt.savefig(image_save_path + '/' + 'Trend_Fit_Clustering.pdf', dpi=300, format='pdf')
 
 
-import matplotlib.cm as cm
-import matplotlib as mp
+
 
 # set colors used in manuscript
 tttt = cm.get_cmap('tab20', 20)
@@ -120,7 +130,7 @@ for i in range(tttt.N):
     rgba = tttt(i)
     tab20.append( mp.colors.rgb2hex(rgba))
 
-from scipy.cluster import hierarchy
+
 
 dend_link = ax.dendrogram_row.linkage
 cut_tree = hierarchy.cut_tree(dend_link, height=60).squeeze()
@@ -143,7 +153,7 @@ ax = sns.clustermap( gam_fit_df.reset_index(drop=True), row_linkage=dend_link, r
                      yticklabels=[], cbar_pos=None, dendrogram_ratio=(0.10,0.01))
 num_stages = 6
 ticks = np.linspace(0, 100, num_stages)
-ax.ax_heatmap.set_xticks( ticks);
+ax.ax_heatmap.set_xticks( ticks)
 # ax.ax_heatmap.set_xticklabels( adata.uns['stage_order'], rotation=90);
 ax.ax_row_dendrogram.set_visible(True)
 plt.setp( ax.ax_heatmap.yaxis.get_majorticklabels(), rotation=0)
@@ -151,7 +161,7 @@ ax.ax_heatmap.set_title( "Clustered Trend Fits")
 plt.savefig(image_save_path + '/' + 'Assignment_Trend_Fit_Clustering.pdf', dpi=300, format='pdf')
 
 
-from sklearn import preprocessing
+
 # genes can be list/array of ints or gene names 
 def plot_tend_avg( genes, trend_df, scat_df=None, color='green', alpha=1.0):
     min_max_scaler = preprocessing.MinMaxScaler()
@@ -169,7 +179,7 @@ def plot_tend_avg( genes, trend_df, scat_df=None, color='green', alpha=1.0):
     return
 
 
-import matplotlib as mpl
+
 mpl.rcParams.update(mpl.rcParamsDefault)
 mpl.style.use('seaborn-whitegrid')
 n_grid_pts = 100
