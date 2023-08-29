@@ -1,20 +1,14 @@
-> DECLARE
-ALL RECORDS ARE BAN
 # Introduction
-There are some records in my daily learning life with my girlfriend, which maybe useful for you when you were confused by similar question. And the main field we focus is bioinformatics, so all records are tools, bedrock of biology or compute technology or program language like python.
-# 1.BASH
-There are `bash shell` records,which includes basic command of `bash shell`, basic grammar of `shell` and advanced skills of `shell` like `sed` and `gawk`. All the useful script are recorded in the above `bash` directory.
-## [1.1 basic command of bash](https://github.com/CocoCanstant/Learning/wiki/1.1-BASH-Entry-level)
-## [1.2 Average Bash Command](https://github.com/CocoCanstant/Learning/wiki/1.2-Average-BASH-Command)
-## [1.3 Bash Script](https://github.com/CocoCanstant/Learning/wiki/1.3-Bash-Script)
+**Learning** repository mainly recorded tools and applications tutorial of bioinformatics, usage records of Python, R, Bash command, Shell and methods and principles of data visulization, machine learning, web spider and data analysis in my learning process with my girlfriend.
 
-# 2. visualization of data
-## [2.1 ggplot2 introduction](https://github.com/CocoCanstant/Learning/wiki/2.1-ggplot2-introduction)
-## [2.2 绘制简单条形图](https://github.com/CocoCanstant/Learning/wiki/2.2-geom_bar())
+We roughly classified these records into four categories: `Principle`, `Tutorial`, `Machine Learning` and `Fun Trying`. The format of majority of script is jupyter notebook, which ensures the reproducibility of results and figures and reduces the difficulty of reading codes.
 
+| Category | Link |
+| :--: | :--: |
+| Principle | https://github.com/CocoConstant/Learning/wiki/Principle |
+|Tutorial | https://github.com/CocoConstant/Learning/wiki/Tutorial |
+| Machine Learning | https://github.com/CocoConstant/Learning/wiki/Machine-Learning |
+| Fun Trying | https://github.com/CocoConstant/Learning/wiki/Fun-Trying |
 
-# 3. Graduation Program
-## [3.1 Getting information top 250 films from douban](https://github.com/CocoCanstant/Learning/wiki/Getting-information-top-250-films-from-douban)
-
-# 4. Deep Learning
-## [4.1 The "Hello World" Of Deep Learning](https://github.com/CocoCanstant/Learning/wiki/1.1-The-%22Hello-World%22-Of-Deep-Learning)
+Here we exhibited what we will do and what we had done (records started in Aug 7,2023):  
+[Future task and history task list](https://github.com/CocoConstant/Learning/wiki/Future-task-and-history-task-list)
