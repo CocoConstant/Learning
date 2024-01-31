@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import sys
+import pandas as pd
 
 # basic infomation and related infomation provided by you
 API_KEY = "59cbd6ff6b3ce5d506f0eeb69e4e09362409"
@@ -37,4 +38,7 @@ else:
     link = 'https://doi.org/' + doi
     country = str(detailed_info).split('AD')[1].split('FAU')[0].strip('\n').strip('- .').split(',')[-1].strip()
     
-    print(f"{pmid}\n{doi}\n{journal}\n{pub_date}\n{authors}\n{institution}\n{link}\n{country}")
+    
+    df = pd.DataFrame([pmid, doi, journal, pub_date, authors, institution, link, country]).T
+    df.columns = ["PMID", "DOI", "Journal", "Publication Date", "Authors", "Institution", "Link", "Country"]
+    df.to_csv(sys.argv[2], index=None)
