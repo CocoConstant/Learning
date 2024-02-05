@@ -28,10 +28,18 @@ else:
     detailed_info = BeautifulSoup(requests.get(fetch_url).text, 'html.parser')
     # detailed info
     pmid = str(detailed_info).split("\nPMID-")[1].split('\n')[0].strip()
-    doi = str(detailed_info).split("\nLID -")[1].split('[doi]')[0].strip()
+    
+    doi_pattern = re.compile(r'LID - (.*) \[doi\]')
+    doi = re.findall(doi_pattern, str(detailed_info))[0]
+
     journal = str(detailed_info).split("\nJT  -")[1].split('\n')[0].strip()
-    tmp_pub_date = str(detailed_info).split("\nDEP -")[1].split('\n')[0].strip()
-    pub_date = tmp_pub_date[:4] + '/' + tmp_pub_date[4:6] + '/' + tmp_pub_date[6:]
+    
+    if len(str(detailed_info).split("\nDEP -")) > 1:
+        tmp_pub_date = str(detailed_info).split("\nDEP -")[1].split('\n')[0].strip()
+        pub_date = tmp_pub_date[:4] + '/' + tmp_pub_date[4:6] + '/' + tmp_pub_date[6:]
+    else:
+        pub_date = None
+
     author_pattern = re.compile(r'FAU(.*)')
     authors = ";".join([i.strip(' - ') for i in re.findall(author_pattern, str(detailed_info))])
     institution = str(detailed_info).split('AD')[1].split('FAU')[0].strip('\n').strip('- .').replace('\n      ', '').rsplit(',', 3)[0]
