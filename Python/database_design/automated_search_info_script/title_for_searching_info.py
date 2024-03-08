@@ -42,10 +42,15 @@ else:
 
     author_pattern = re.compile(r'FAU(.*)')
     authors = ";".join([i.strip(' - ') for i in re.findall(author_pattern, str(detailed_info))])
-    institution = str(detailed_info).split('AD')[1].split('FAU')[0].strip('\n').strip('- .').replace('\n      ', '').rsplit(',', 3)[0]
+    try:
+        institution = str(detailed_info).split('AD')[1].split('FAU')[0].strip('\n').strip('- .').replace('\n      ', '').rsplit(',', 3)[0]
+    except:
+        institution = ""
     link = 'https://doi.org/' + doi
-    country = str(detailed_info).split('AD')[1].split('FAU')[0].strip('\n').strip('- .').split(',')[-1].strip()
-    
+    try:
+        country = str(detailed_info).split('AD')[1].split('FAU')[0].strip('\n').strip('- .').split(',')[-1].strip()
+    except:
+        country = ""
     
     df = pd.DataFrame([pmid, doi, journal, pub_date, authors, institution, link, country]).T
     df.columns = ["PMID", "DOI", "Journal", "Publication Date", "Authors", "Institution", "Link", "Country"]
