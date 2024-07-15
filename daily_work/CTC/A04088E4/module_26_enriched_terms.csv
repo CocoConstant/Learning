@@ -1,0 +1,5 @@
+Gene_set,Term,Overlap,P-value,Adjusted P-value,Old P-value,Old Adjusted P-value,Odds Ratio,Combined Score,Genes
+GO_Biological_Process_2023,Antigen Processing And Presentation Of Exogenous Peptide Antigen Via MHC Class II (GO:0019886),1/26,0.0218801506534414,0.034714522168796,0,0,49.895,190.70744238188936,CTSE
+GO_Biological_Process_2023,Antigen Processing And Presentation Of Peptide Antigen Via MHC Class II (GO:0002495),1/28,0.0235444454896736,0.034714522168796,0,0,46.19444444444444,173.1767519855369,CTSE
+GO_Biological_Process_2023,Antigen Processing And Presentation Of Exogenous Peptide Antigen (GO:0002478),1/31,0.026035891626597,0.034714522168796,0,0,41.56875,151.6544078957345,CTSE
+GO_Biological_Process_2023,Proteolysis (GO:0006508),1/330,0.2464451211431184,0.2464451211431184,0,0,3.733662613981763,5.229427381302052,CTSE

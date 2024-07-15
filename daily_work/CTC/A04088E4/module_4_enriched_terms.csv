@@ -1,0 +1,2 @@
+Gene_set,Term,Overlap,P-value,Adjusted P-value,Old P-value,Old Adjusted P-value,Odds Ratio,Combined Score,Genes
+GO_Biological_Process_2023,Resolution Of Meiotic Recombination Intermediates (GO:0000712),1/14,0.0104522409709381,0.0104522409709381,0,0,109.73626373626374,500.5003914455875,HFM1
