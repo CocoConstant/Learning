@@ -1,0 +1,26 @@
+src_idx,targ_idx,src_name,targ_name,jaccard_coef,overlap_coef,overlap_genes
+0,1,Post-Transcriptional Regulation Of Gene Expression (GO:0010608),Negative Regulation Of Protein Metabolic Process (GO:0051248),0.04,0.10810810810810811,"LARP1,GIGYF2,TSC1,PCIF1"
+0,2,Post-Transcriptional Regulation Of Gene Expression (GO:0010608),Regulation Of mRNA Stability (GO:0043488),0.10294117647058823,0.1891891891891892,"LARP1,CELF1,PUM2,GIGYF2,PUM1,METTL16,RC3H1"
+0,4,Post-Transcriptional Regulation Of Gene Expression (GO:0010608),Positive Regulation Of Telomere Maintenance (GO:0032206),0.015625,0.03571428571428571,MAPKAPK5
+0,8,Post-Transcriptional Regulation Of Gene Expression (GO:0010608),Negative Regulation Of Amide Metabolic Process (GO:0034249),0.04819277108433735,0.10810810810810811,"LARP1,GIGYF2,TSC1,PCIF1"
+1,2,Negative Regulation Of Protein Metabolic Process (GO:0051248),Regulation Of mRNA Stability (GO:0043488),0.08247422680412371,0.21052631578947367,"FXR1,DHX36,LARP1,YBX1,GIGYF2,SERBP1,FMR1,ROCK1"
+1,3,Negative Regulation Of Protein Metabolic Process (GO:0051248),Membrane Organization (GO:0061024),0.00641025641025641,0.014925373134328358,SNX3
+1,4,Negative Regulation Of Protein Metabolic Process (GO:0051248),Positive Regulation Of Telomere Maintenance (GO:0032206),0.010638297872340425,0.03571428571428571,DHX36
+1,5,Negative Regulation Of Protein Metabolic Process (GO:0051248),Regulation Of Peptidyl-Tyrosine Phosphorylation (GO:0050730),0.00980392156862745,0.027777777777777776,PRNP
+1,6,Negative Regulation Of Protein Metabolic Process (GO:0051248),Positive Regulation Of DNA Repair (GO:0045739),0.018691588785046728,0.047619047619047616,"RPS3,FMN2"
+1,7,Negative Regulation Of Protein Metabolic Process (GO:0051248),Regulation Of Protein Kinase Activity (GO:0045859),0.015748031496062992,0.03225806451612903,"AKT1,AGAP2"
+1,8,Negative Regulation Of Protein Metabolic Process (GO:0051248),Negative Regulation Of Amide Metabolic Process (GO:0034249),0.5,0.78,"DHFR,EIF4E2,PAIP2,CSNK2A1,DDX3X,FMR1,RPL13A,CNOT10,EIF4A3,IGF2BP2,MALSU1,CPEB3,GIGYF2,TSC1,PRNP,RBM4,RNF139,BTG2,FXR1,DHX36,DAPK1,RACK1,NCL,YBX1,ILF3,DDX6,SYNCRIP,PCIF1,SERBP1,CAPRIN1,CALR,NHLRC3,EIF2AK2,LARP1,CNOT1,RPS3,EIF2AK3,TIA1,ROCK1"
+1,9,Negative Regulation Of Protein Metabolic Process (GO:0051248),Regulation Of Proteasomal Ubiquitin-Dependent Protein Catabolic Process (GO:0032434),0.02459016393442623,0.05172413793103448,"PHF20L1,HSP90AB1,RACK1"
+2,4,Regulation Of mRNA Stability (GO:0043488),Positive Regulation Of Telomere Maintenance (GO:0032206),0.015384615384615385,0.03571428571428571,DHX36
+2,5,Regulation Of mRNA Stability (GO:0043488),Regulation Of Peptidyl-Tyrosine Phosphorylation (GO:0050730),0.0136986301369863,0.027777777777777776,PRKCD
+2,8,Regulation Of mRNA Stability (GO:0043488),Negative Regulation Of Amide Metabolic Process (GO:0034249),0.11392405063291139,0.23684210526315788,"FXR1,DHX36,APEX1,LARP1,YBX1,GIGYF2,SERBP1,FMR1,ROCK1"
+3,7,Membrane Organization (GO:0061024),Regulation Of Protein Kinase Activity (GO:0045859),0.013333333333333334,0.03225806451612903,"SLC9A3R1,CHP1"
+4,6,Positive Regulation Of Telomere Maintenance (GO:0032206),Positive Regulation Of DNA Repair (GO:0045739),0.12903225806451613,0.2857142857142857,"YY1,INO80B,INO80,ACTL6A,NFRKB,INO80E,ACTR5,UCHL5"
+4,8,Positive Regulation Of Telomere Maintenance (GO:0032206),Negative Regulation Of Amide Metabolic Process (GO:0034249),0.012987012987012988,0.03571428571428571,DHX36
+4,9,Positive Regulation Of Telomere Maintenance (GO:0032206),Regulation Of Proteasomal Ubiquitin-Dependent Protein Catabolic Process (GO:0032434),0.011764705882352941,0.03571428571428571,UCHL5
+5,7,Regulation Of Peptidyl-Tyrosine Phosphorylation (GO:0050730),Regulation Of Protein Kinase Activity (GO:0045859),0.053763440860215055,0.1388888888888889,"PAK2,PTPRC,RAP2C,PTK2B,RAP2B"
+5,8,Regulation Of Peptidyl-Tyrosine Phosphorylation (GO:0050730),Negative Regulation Of Amide Metabolic Process (GO:0034249),0.011764705882352941,0.027777777777777776,PRNP
+6,8,Positive Regulation Of DNA Repair (GO:0045739),Negative Regulation Of Amide Metabolic Process (GO:0034249),0.01098901098901099,0.023809523809523808,RPS3
+6,9,Positive Regulation Of DNA Repair (GO:0045739),Regulation Of Proteasomal Ubiquitin-Dependent Protein Catabolic Process (GO:0032434),0.010101010101010102,0.023809523809523808,UCHL5
+7,9,Regulation Of Protein Kinase Activity (GO:0045859),Regulation Of Proteasomal Ubiquitin-Dependent Protein Catabolic Process (GO:0032434),0.01694915254237288,0.034482758620689655,"LRRK2,AXIN1"
+8,9,Negative Regulation Of Amide Metabolic Process (GO:0034249),Regulation Of Proteasomal Ubiquitin-Dependent Protein Catabolic Process (GO:0032434),0.009345794392523364,0.02,RACK1
